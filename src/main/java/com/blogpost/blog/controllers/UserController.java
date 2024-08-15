@@ -4,6 +4,7 @@ import com.blogpost.blog.dto.UserDTO;
 import com.blogpost.blog.entities.User;
 import com.blogpost.blog.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -20,6 +21,13 @@ public class UserController {
     @GetMapping
     public List<UserDTO> getAllUsers() {
         return userService.getAllUsers();
+    }
+
+    @GetMapping("/users")
+    public Page<UserDTO> getAllUsers(
+            @RequestParam(defaultValue = "0") int page,
+            @RequestParam(defaultValue = "2") int size) {
+        return userService.getAllUsers(page, size);
     }
 
     @GetMapping("/{id}")
