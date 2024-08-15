@@ -1,6 +1,7 @@
 package com.blogpost.blog.services;
 
 import com.blogpost.blog.dto.UserDTO;
+import com.blogpost.blog.dto.UserSummariesDTO;
 import com.blogpost.blog.entities.User;
 import com.blogpost.blog.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,6 +21,9 @@ public class UserService {
 
     public List<UserDTO> getAllUsers() {
         return userRepository.findAllUsers();
+    }
+    public List<UserSummariesDTO> getAllUserSummaries() {
+        return userRepository.findAllUserSummaries();
     }
 
     public Page<UserDTO> getAllUsers(int page, int size) {

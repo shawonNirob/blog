@@ -1,6 +1,7 @@
 package com.blogpost.blog.controllers;
 
 import com.blogpost.blog.dto.UserDTO;
+import com.blogpost.blog.dto.UserSummariesDTO;
 import com.blogpost.blog.entities.User;
 import com.blogpost.blog.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,7 +13,7 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/api/users")
+@RequestMapping("/api")
 public class UserController {
 
     @Autowired
@@ -21,6 +22,11 @@ public class UserController {
     @GetMapping
     public List<UserDTO> getAllUsers() {
         return userService.getAllUsers();
+    }
+
+    @GetMapping("/summaries")
+    public List<UserSummariesDTO> getAllUserSummaries() {
+        return userService.getAllUserSummaries();
     }
 
     @GetMapping("/users")
