@@ -35,6 +35,14 @@ public class User {
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
     private List<Post> posts;
 
+    public User(int commentBy) {
+
+    }
+
+    public User() {
+
+    }
+
     // Getters and setters
 
     public Integer getId() {

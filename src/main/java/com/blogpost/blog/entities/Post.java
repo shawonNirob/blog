@@ -34,6 +34,14 @@ public class Post {
     @Column(name = "date_updated") // Specify the column name
     private LocalDateTime dateUpdated;
 
+    public Post(int postId) {
+
+    }
+
+    public Post() {
+
+    }
+
     // Getters and setters
 
     public Integer getId() {
