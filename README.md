@@ -1,8 +1,8 @@
-User Management API
+##User Management API
 
 This repository contains a simple User Management REST API built with Spring Boot. The `UserController` class provides endpoints for managing users, including creating, retrieving, updating, and deleting user records. This API also includes functionality for pagination and user summaries.
 
-Features
+##Features
 Retrieve All Users: Fetches a list of all users.
 Retrieve User Summaries: Fetches a summarized list of user data.
 Pagination: Fetches a paginated list of users.
