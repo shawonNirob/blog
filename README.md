@@ -2,7 +2,7 @@
 
 This is a simple blog application built with Spring Boot, Gradle, and Java. The application follows a modular architecture with a clear separation of concerns, making it easy to maintain and extend.
 
-## Features
+## Key Features
 
 - **User Management**: Allows users to register, log in, and manage their profiles.
 - **Post Management**: Users can create, edit, view, and delete blog posts.
