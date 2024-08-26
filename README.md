@@ -1,6 +1,6 @@
 # Blog Application
 
-This is a simple blog application built with Spring Boot, Gradle, and Java. The application follows a modular architecture with a clear separation of concerns, making it easy to maintain and extend.
+This is a blog application built with Spring Boot, Gradle, and Java. The application follows a modular architecture with a clear separation of concerns, making it easy to maintain and extend.
 
 ## Key Features
 
