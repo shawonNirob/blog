@@ -31,28 +31,102 @@ The **Blog** application is a Java-based web application designed for creating, 
 
 ## API Endpoints
 
+All API endpoints are prefixed with `/api`.
+
 ### User Management
 
-- `GET /users` - Retrieve all users.
-- `GET /users/{id}` - Retrieve a user by ID.
-- `POST /users` - Create a new user.
-- `PUT /users/{id}` - Update a user by ID.
-- `DELETE /users/{id}` - Delete a user by ID.
+- **Retrieve All Users**
+  - `GET /api`  
+    Retrieves a list of all users.
+
+- **Retrieve User Summaries**
+  - `GET /api/summaries`  
+    Retrieves summaries of all users.
+
+- **Retrieve Paginated Users**
+  - `GET /api/users?page={page}&size={size}`  
+    Retrieves users with pagination.  
+    - `page`: Page number (default is `0`).
+    - `size`: Number of users per page (default is `2`).
+
+- **Retrieve a User by ID**
+  - `GET /api/{id}`  
+    Retrieves a user by their unique ID.
+
+- **Create a New User**
+  - `POST /api`  
+    Creates a new user.  
+    **Request Body:**  
+    ```json
+    {
+      "fullName": "John Doe",
+      "dob": "1990-01-01",
+      "userType": 1,
+      "userStatus": 1
+    }
+    ```
+
+- **Update a User by ID**
+  - `PUT /api/{id}`  
+    Updates an existing user by their ID.  
+    **Request Body:**  
+    ```json
+    {
+      "fullName": "Jane Doe",
+      "dob": "1990-01-01",
+      "userType": 2,
+      "userStatus": 1
+    }
+    ```
+
+- **Delete a User by ID**
+  - `DELETE /api/{id}`  
+    Deletes a user by their ID.
 
 ### Post Management
 
-- `GET /posts` - Retrieve all posts.
-- `GET /posts/{id}` - Retrieve a post by ID.
-- `POST /posts` - Create a new post.
-- `PUT /posts/{id}` - Update a post by ID.
-- `DELETE /posts/{id}` - Delete a post by ID.
+- **Retrieve All Posts**
+  - `GET /api/posts`  
+    Retrieves a list of all blog posts.
+
+- **Retrieve a Post by ID**
+  - `GET /api/posts/{id}`  
+    Retrieves a specific post by its unique ID.
+
+- **Create a New Post**
+  - `POST /api/posts`  
+    Creates a new blog post.  
+    **Request Body:**  
+    ```json
+    {
+      "userId": 1,
+      "title": "My First Blog Post",
+      "postDescription": "This is the content of my first post.",
+      "status": 1,
+      "updatedBy": 1
+    }
+    ```
+
+- **Update a Post by ID**
+  - `PUT /api/posts/{id}`  
+    Updates an existing post by its ID.  
+    **Request Body:**  
+    ```json
+    {
+      "title": "Updated Blog Post Title",
+      "postDescription": "Updated content of the post.",
+      "status": 2,
+      "updatedBy": 2
+    }
+    ```
+
+- **Delete a Post by ID**
+  - `DELETE /api/posts/{id}`  
+    Deletes a post by its ID.
 
 ### Comment Management
 
-- `GET /comments` - Retrieve all comments.
-- `POST /comments` - Add a new comment to a post.
-- `GET /comments/{id}` - Retrieve a comment by ID.
-- `DELETE /comments/{id}` - Delete a comment by ID.
+> **Note:** The `CommentController` is currently under development. Future updates will include endpoints for managing comments.
 
 ## Database Schema
 
